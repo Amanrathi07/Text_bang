@@ -5,7 +5,7 @@ import Navbar from './container/Navbar';
 function App() {
   return (
   <>
-    <Navbar />
+    <Navbar title="aman" />
     
     
     
