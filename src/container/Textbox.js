@@ -19,7 +19,7 @@ export default function Textbox() {
     <textarea placeholder='Enter your text' value={text} className="col-sm-11" rows="13" onChange={handelOnChange} ></textarea>
 
   <div>    
-    <button onClick={hendelUpClicked}  className="mt-5 btn btn-primary ">convert to upper</button>
+    <button onClick={hendelUpClicked}  className="mt-4 btn btn-primary ">convert to upper</button>
   </div>
     
   </div>

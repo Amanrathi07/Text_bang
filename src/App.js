@@ -6,7 +6,7 @@ import Textbox from './container/Textbox';
 function App() {
   return (
   <>
-    <Navbar title="aman" aboutUs="aboutme" home="home" />
+    <Navbar title="Text Bang" aboutUs="About Me" home="Home" />
     
     
     <Textbox />
