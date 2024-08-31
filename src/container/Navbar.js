@@ -23,9 +23,9 @@ export default function Navbar(props) {
         
        
       </ul>
-      <div class="form-check form-switch">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Dark mode</label>
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+      <div className="form-check form-switch">
+      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark mode</label>
+      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
       </div>
       
     </div>
@@ -44,8 +44,8 @@ Navbar.propType={
   home: PropTypes.string
 };
 
-Navbar.defaultProps ={
-  title:"title" ,
-  aboutUs: "aboutUs",
-  home: "home"
-};
+// Navbar.defaultProps ={
+//   title:"title" ,
+//   aboutUs: "aboutUs",
+//   home: "home"
+// };
