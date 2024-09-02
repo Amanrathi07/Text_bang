@@ -72,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Text_bang
 >>>>>>> dbef8f0eeedf52f97d6b18c3ad4b5e186602ed75
+change to ubuntu on 2 spt 2024
