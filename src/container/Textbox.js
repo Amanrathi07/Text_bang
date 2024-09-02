@@ -17,17 +17,45 @@ export default function Textbox() {
     setText(newText);
   }
 
+  const textClear=()=>{
+    setText("");
+  }
+  const testCopy=()=>{
+    let text=document.querySelector("#my_box")
+    text.setSelectionRange(0,9999);
+    navigator.clipboard.writeText(text.value);  } 
+
+  const handelExtraSpace=()=>{
+    let newText=text.split(/[ ]+/);
+    setText(newText.join(" "))
+  }  
+  
+  
+  
+  
+
   return (
     <>    
   <div className="container">
     <h3 className="p-3">Text Area</h3>
-    <textarea placeholder='Enter your text' value={text} className="col-sm-11" rows="13" onChange={handelOnChange} ></textarea>
+    <textarea placeholder='Enter your text' id='my_box' value={text} className="col-sm-11" rows="13" onChange={handelOnChange } ></textarea>
 
-  <div>    
-    <button onClick={hendelUpClicked}  className="mt-4 btn btn-primary ">convert to upper</button>
-    <button onClick={hendelDownClicked}  className="mx-2 mt-4 btn btn-primary ">convert to lower</button>
+   
   </div>
+
+  <div className="mx-5">    
+    <button onClick={hendelUpClicked}  className="pl-5 mt-4 btn btn-primary ">convert to upper</button>
+    <button onClick={hendelDownClicked}  className="mx-2 mt-4 btn btn-primary ">convert to lower</button>
+    <button onClick={textClear}  className="mx-2 mt-4 btn btn-primary">clear</button>
+    <button onClick={testCopy}  className="mx-2 mt-4 btn btn-primary">copy</button>
+    <button onClick={handelExtraSpace}  className="mx-2 mt-4 btn btn-primary">remove extra space</button>
     
+    
+  </div>
+  <div className="my-4 container">
+    <p>{text.split(" ").length} words and {text.length} characters</p>
+    <hr/>
+    <p>{text}</p>
   </div>
       
     </>
