@@ -1,12 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 
 
 
 export default function Navbar(props) {
+
+ const dark={backgroundColor :"brown",}
+ const light={backgroundColor :"yellow",}
+
+ const[mode,setMode]=useState(light) ;
+ const modeChange=()=>{
+  
+     if (mode===light){
+     setMode(dark)
+     console.log(mode)
+          }
+      else{
+        setMode(light)
+        console.log(mode)
+      }    
+      
+    }
+
   return (
     <>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <nav className="navbar navbar-expand-lg " style={mode} >
   <div className="container-fluid">
     <a className="navbar-brand" href="/">{props.title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,9 +41,9 @@ export default function Navbar(props) {
         
        
       </ul>
-      <div className="form-check form-switch">
-      <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark mode</label>
-      <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+        <div className="form-check form-switch" onClick={modeChange}>
+       <input className="form-check-input" type="checkbox"  role="switch" id="flexSwitchCheckDefault" />
+        
       </div>
       
     </div>

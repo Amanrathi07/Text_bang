@@ -44,18 +44,20 @@ export default function Textbox() {
   </div>
 
   <div className="mx-5">    
-    <button onClick={hendelUpClicked}  className="pl-5 mt-4 btn btn-primary ">convert to upper</button>
-    <button onClick={hendelDownClicked}  className="mx-2 mt-4 btn btn-primary ">convert to lower</button>
-    <button onClick={textClear}  className="mx-2 mt-4 btn btn-primary">clear</button>
-    <button onClick={testCopy}  className="mx-2 mt-4 btn btn-primary">copy</button>
-    <button onClick={handelExtraSpace}  className="mx-2 mt-4 btn btn-primary">remove extra space</button>
+    <button onClick={hendelUpClicked} disabled={text.length>0 ? false :true }  className="pl-5 mt-4 btn btn-primary ">convert to upper</button>
+
+    <button onClick={hendelDownClicked} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary ">convert to lower</button>
+
+    <button onClick={textClear} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary">clear</button>
+    <button onClick={testCopy} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary">copy</button>
+    <button onClick={handelExtraSpace} disabled={text.length>0 ? false :true }  className="mx-2 mt-4 btn btn-primary">remove extra space</button>
     
     
   </div>
   <div className="my-4 container">
     <p>{text.split(" ").length} words and {text.length} characters</p>
     <hr/>
-    <p>{text}</p>
+    <p>{text.length>0 ? text : "enter text for pre-view"}</p>
   </div>
       
     </>
