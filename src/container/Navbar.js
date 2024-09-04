@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -22,7 +22,7 @@ export default function Navbar(props) {
           <a className="nav-link active" aria-current="page" href="/">{props.home}</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">{props.aboutUs}</a>
+          <a className="nav-link" href="/" >{props.aboutUs}</a>
         </li>
         
        

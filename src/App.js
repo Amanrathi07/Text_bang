@@ -8,7 +8,6 @@ import Alert from './container/Alert';
 
 
 
-
 function App() {
 
   const[mode,setMode]=useState("light") ;
@@ -56,7 +55,7 @@ function App() {
     <div style={{height:"50px"}}>
       <Alert alert={alert}/>
     </div>
-
+z
       <Textbox  alert={alert} showAlert={showAlert}/>
     </div>
  

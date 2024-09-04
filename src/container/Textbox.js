@@ -45,7 +45,7 @@ export default function Textbox(props) {
     <>    
   <div className="mt-1 container">
     <h3 className="heading px-3" >Text Area</h3>
-    <textarea placeholder='Enter your text'  id='my_box' value={text} className="mystyl col-sm-11" rows="13" onChange={handelOnChange } ></textarea>
+    <textarea placeholder='Enter your text'  id='my_box' value={text} className="mystyl col-12" rows="12" onChange={handelOnChange } ></textarea>
 
    
   </div>
