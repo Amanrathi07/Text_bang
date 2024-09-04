@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
 
-export default function Textbox() {
+
+export default function Textbox(props) {
 
   const[text,setText]=useState('');
 
@@ -10,24 +11,30 @@ export default function Textbox() {
   const hendelUpClicked=function hendelUpClicked(){
     let newText=text.toUpperCase() ;
     setText(newText);
+    props.showAlert("converted to upper case");
   }
 
   const hendelDownClicked=function hendelUpClicked(){
     let newText=text.toLowerCase() ;
     setText(newText);
+    props.showAlert("converted to lower-case");
   }
 
   const textClear=()=>{
     setText("");
+    props.showAlert("text clered");
   }
   const testCopy=()=>{
     let text=document.querySelector("#my_box")
     text.setSelectionRange(0,9999);
-    navigator.clipboard.writeText(text.value);  } 
+    navigator.clipboard.writeText(text.value); 
+    props.showAlert("copy to clipboard");
+   } 
 
   const handelExtraSpace=()=>{
     let newText=text.split(/[ ]+/);
     setText(newText.join(" "))
+    props.showAlert("extra space removed");
   }  
   
   
@@ -36,28 +43,28 @@ export default function Textbox() {
 
   return (
     <>    
-  <div className="container">
-    <h3 className="p-3">Text Area</h3>
-    <textarea placeholder='Enter your text' id='my_box' value={text} className="col-sm-11" rows="13" onChange={handelOnChange } ></textarea>
+  <div className="mt-1 container">
+    <h3 className="heading px-3" >Text Area</h3>
+    <textarea placeholder='Enter your text'  id='my_box' value={text} className="mystyl col-sm-11" rows="13" onChange={handelOnChange } ></textarea>
 
    
   </div>
 
-  <div className="mx-5">    
-    <button onClick={hendelUpClicked} disabled={text.length>0 ? false :true }  className="pl-5 mt-4 btn btn-primary ">convert to upper</button>
+  <div className="container">    
+    <button onClick={hendelUpClicked} disabled={text.length>0 ? false :true }  className="mybtn pl-5 mt-4 btn btn-primary ">convert to upper</button>
 
-    <button onClick={hendelDownClicked} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary ">convert to lower</button>
+    <button onClick={hendelDownClicked} disabled={text.length>0 ? false :true } className=" mybtn mx-2 mt-4 btn btn-primary ">convert to lower</button>
 
     <button onClick={textClear} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary">clear</button>
     <button onClick={testCopy} disabled={text.length>0 ? false :true } className="mx-2 mt-4 btn btn-primary">copy</button>
-    <button onClick={handelExtraSpace} disabled={text.length>0 ? false :true }  className="mx-2 mt-4 btn btn-primary">remove extra space</button>
+    <button onClick={handelExtraSpace} disabled={text.length>0 ? false :true }  className="mybtn mx-2 mt-4 btn btn-primary">remove extra space</button>
     
     
   </div>
-  <div className="my-4 container">
-    <p>{text.split(" ").length} words and {text.length} characters</p>
+  <div className="heading2 my-4 container">
+    <p >{text.split(" ").length} words and {text.length} characters</p>
     <hr/>
-    <p>{text.length>0 ? text : "enter text for pre-view"}</p>
+    <p >{text.length>0 ? text : "enter text for pre-view"}</p>
   </div>
       
     </>
