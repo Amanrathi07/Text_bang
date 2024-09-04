@@ -62,7 +62,7 @@ export default function Textbox(props) {
     
   </div>
   <div className="heading2 my-4 container">
-    <p >{text.split(" ").length} words and {text.length} characters</p>
+    <p >{text.split(" ").filter((Element)=>{return Element.length!==0}).length} words and {text.length} characters</p>
     <hr/>
     <p >{text.length>0 ? text : "enter text for pre-view"}</p>
   </div>
